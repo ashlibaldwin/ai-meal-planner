@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.vercel
+.svelte-kit
+
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Environment variables
+.env

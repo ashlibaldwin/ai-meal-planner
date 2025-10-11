@@ -1,0 +1,33 @@
+{
+  "id": "chatcmpl-CPX2lsgCd1ZbfqO54bRbRRiwoyTjF",
+  "object": "chat.completion",
+  "created": 1760201255,
+  "model": "gpt-4o-mini-2024-07-18",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```json\n{\n  \"scores\": [\n    {\n      \"idx\": 0,\n      \"score\": 0,\n      \"why\": \"Exceeds maxMinutes and does not contain chicken.\",\n      \"varietyKey\": \"American\"\n    },\n    {\n      \"idx\": 1,\n      \"score\": 100,\n      \"why\": \"Meets all criteria: easy, under 60 minutes, contains chicken, and is gluten-free option.\",\n      \"varietyKey\": \"Mexican\"\n    },\n    {\n      \"idx\": 2,\n      \"score\": 100,\n      \"why\": \"Meets all criteria: easy, under 60 minutes, contains chicken, and is gluten-free.\",\n      \"varietyKey\": \"American\"\n    },\n    {\n      \"idx\": 3,\n      \"score\": 100,\n      \"why\": \"Meets all criteria: easy, under 60 minutes, contains chicken, and is gluten-free.\",\n      \"varietyKey\": \"Asian\"\n    },\n    {\n      \"idx\": 4,\n      \"score\": 0,\n      \"why\": \"Does not contain chicken.\",\n      \"varietyKey\": \"Asian\"\n    },\n    {\n      \"idx\": 5,\n      \"score\": 0,\n      \"why\": \"Does not contain chicken.\",\n      \"varietyKey\": \"Indian\"\n    },\n    {\n      \"idx\": 6,\n      \"score\": 100,\n      \"why\": \"Meets all criteria: easy, under 60 minutes, contains chicken, and is gluten-free.\",\n      \"varietyKey\": \"American\"\n    },\n    {\n      \"idx\": 7,\n      \"score\": 0,\n      \"why\": \"Does not contain chicken.\",\n      \"varietyKey\": \"American\"\n    },\n    {\n      \"idx\": 8,\n      \"score\": 100,\n      \"why\": \"Meets all criteria: easy, under 60 minutes, contains chicken, and is gluten-free.\",\n      \"varietyKey\": \"American\"\n    },\n    {\n      \"idx\": 9,\n      \"score\": 0,\n      \"why\": \"Does not contain chicken.\",\n      \"varietyKey\": \"Mexican\"\n    }\n  ]\n}\n```",
+        "refusal": null,
+        "annotations": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 931,
+    "completion_tokens": 466,
+    "total_tokens": 1397,
+    "prompt_tokens_details": { "cached_tokens": 0, "audio_tokens": 0 },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "service_tier": "default",
+  "system_fingerprint": "fp_560af6e559"
+}

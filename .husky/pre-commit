@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Only record fixtures if key is present
+if [ -f .env ] && grep -q "OPENAI_API_KEY" .env && ! grep -q "^#.*OPENAI_API_KEY" .env; then
+  echo "Recording OpenAI fixtures before commit..."
+  
+  # Clean up old fixtures first
+  echo "Cleaning up old fixtures..."
+  rm -rf src/lib/__tests__/fixtures/llm/*.json
+  
+  # Record new fixtures
+  npm run test:record || exit 1
+  
+  # Add only the new fixtures
+  git add src/lib/__tests__/fixtures/llm || true
+else
+  echo "OPENAI_API_KEY not set; skipping fixture recording"
+fi
+
+# Always run lint-staged after
+npx lint-staged
