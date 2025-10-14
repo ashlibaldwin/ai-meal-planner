@@ -1,0 +1,33 @@
+{
+  "id": "chatcmpl-CQNuPHlndL9P7Rw1j6WlZvIu2vImh",
+  "object": "chat.completion",
+  "created": 1760404469,
+  "model": "gpt-4o-mini-2024-07-18",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"scores\":[{\"idx\":0,\"score\":87,\"why\":\"Meets all constraints, easy to prepare in 25 minutes, and features chicken as the primary protein. Provides a Mexican cuisine option, contributing to variety.\",\"varietyKey\":\"Mexican\"},{\"idx\":1,\"score\":0,\"why\":\"Does not contain chicken, violating the protein requirement.\",\"varietyKey\":\"American\"},{\"idx\":2,\"score\":90,\"why\":\"Meets all constraints, easy to prepare in 30 minutes, and features chicken as the primary protein. Asian cuisine adds variety.\",\"varietyKey\":\"Asian\"},{\"idx\":3,\"score\":0,\"why\":\"Does not contain chicken, violating the protein requirement.\",\"varietyKey\":\"Mexican\"},{\"idx\":4,\"score\":90,\"why\":\"Meets all constraints, easy to prepare in 20 minutes, and features chicken as the primary protein. American cuisine adds variety.\",\"varietyKey\":\"American\"},{\"idx\":5,\"score\":0,\"why\":\"Does not contain chicken, violating the protein requirement.\",\"varietyKey\":\"American\"},{\"idx\":6,\"score\":0,\"why\":\"Does not contain chicken, violating the protein requirement.\",\"varietyKey\":\"Indian\"},{\"idx\":7,\"score\":0,\"why\":\"Does not contain chicken, violating the protein requirement.\",\"varietyKey\":\"Asian\"},{\"idx\":8,\"score\":90,\"why\":\"Meets all constraints, easy to prepare in 40 minutes, and features chicken as the primary protein. American cuisine adds variety.\",\"varietyKey\":\"American\"},{\"idx\":9,\"score\":90,\"why\":\"Meets all constraints, easy to prepare in 30 minutes, and features chicken as the primary protein. American cuisine adds variety.\",\"varietyKey\":\"American\"}]}",
+        "refusal": null,
+        "annotations": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 927,
+    "completion_tokens": 352,
+    "total_tokens": 1279,
+    "prompt_tokens_details": { "cached_tokens": 0, "audio_tokens": 0 },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "service_tier": "default",
+  "system_fingerprint": "fp_560af6e559"
+}

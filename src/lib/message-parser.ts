@@ -444,8 +444,11 @@ export class MessageParser {
   }
 
   private extractMealTypes(message: string, current: string[]): string[] {
-    // Scope restriction: dinners only
-    return ['dinner']
+    const mealTypeKeywords = ['breakfast', 'lunch', 'dinner', 'snack']
+    const found = mealTypeKeywords.filter((keyword) =>
+      message.toLowerCase().includes(keyword)
+    )
+    return found.length > 0 ? found : current.length > 0 ? current : ['dinner']
   }
 
   private extractCookingTime(message: string, current: string): string {

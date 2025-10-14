@@ -72,7 +72,7 @@ async function seedRecipes() {
     },
     {
       name: 'Chicken and Veg Skewers',
-      ingredients: ['chicken breast', 'pepper'],
+      ingredients: ['chicken breast', 'bell pepper'],
       dietaryTags: ['gluten-free', 'dairy-free'],
       difficulty: 'easy',
       prepTime: 10,

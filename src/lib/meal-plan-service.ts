@@ -12,7 +12,9 @@ export class MealPlanService {
     excludeRecipeNames?: string[] | null,
     mode?: 'createNewPlan' | 'updateExistingPlan'
   ) {
-    const recipes = await prisma.recipe.findMany()
+    const recipes = await prisma.recipe.findMany({
+      orderBy: { name: 'asc' }
+    })
     const mealPlanResponse = await generateMealPlan(
       preferences,
       recipes,
@@ -100,7 +102,9 @@ export class MealPlanService {
       throw new Error('Meal plan not found')
     }
 
-    const recipes = await prisma.recipe.findMany()
+    const recipes = await prisma.recipe.findMany({
+      orderBy: { name: 'asc' }
+    })
     const response = await modifyMealPlan(
       currentMealPlan,
       modificationRequest,

@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "prisma generate && prisma migrate deploy && prisma db seed && vite build",
     "preview": "vite preview",
-    "prepare": "husky",
+    "prepare": "husky || echo 'husky skipped'",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -32,19 +32,16 @@
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
     "@vitest/coverage-v8": "^2.1.1",
-    "autoprefixer": "^10.4.16",
     "dotenv-cli": "^10.0.0",
     "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
-    "postcss": "^8.4.32",
     "prettier": "^3.3.3",
     "prettier-plugin-svelte": "^3.4.0",
     "prisma": "^5.7.0",
     "svelte": "^5.0.0",
     "svelte-check": "^4.0.0",
-    "tailwindcss": "^3.3.6",
     "tsx": "^4.6.2",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.46.0",
@@ -56,14 +53,18 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{json,md,css,scss,html}": [
+    "*.{json,md,css,scss,html,yml,yaml}": [
       "prettier --write"
     ]
   },
   "dependencies": {
     "@prisma/client": "^5.7.0",
     "@sveltejs/adapter-vercel": "^5.10.2",
-    "openai": "^4.20.1"
+    "@tailwindcss/postcss": "^4.1.14",
+    "autoprefixer": "^10.4.21",
+    "openai": "^4.20.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
