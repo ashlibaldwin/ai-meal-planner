@@ -12,7 +12,6 @@ export class MessageParser {
     const countsTag = this.buildRequireProteinCountsTag(counts)
     const exclusive = this.extractExclusiveProtein(lowerMessage)
     const exclusiveTag = exclusive ? `exclusive-protein:${exclusive}` : ''
-    // Remove stale tokens (exclusive/require) from the base before merging new ones
     const baseClean = base
       .replace(/exclusive-protein:\w+/gi, '')
       .replace(/require-proteins?:[^,]+/gi, '')
@@ -69,14 +68,12 @@ export class MessageParser {
     message: string,
     isFirstMessage: boolean = false
   ): boolean {
-    // Always generate a meal plan on the first message
     if (isFirstMessage) {
       return true
     }
 
     const lowerMessage = message.toLowerCase()
 
-    // If the user is asking to add meals (e.g., "add lunches"), we should generate
     if (this.shouldAddToExistingMealPlan(message)) {
       return true
     }
@@ -186,7 +183,6 @@ export class MessageParser {
       'switch'
     ]
     const hasModify = modifyKeywords.some((k) => lowerMessage.includes(k))
-    // Must mention a protein or a recipe keyword to avoid false positives
     const contextKeywords = [
       'chicken',
       'beef',
@@ -522,7 +518,6 @@ export class MessageParser {
       }
     })
 
-    // Detect explicit protein category requirements (e.g., "1 chicken, 1 fish, 1 beef")
     const proteinWords = [
       'chicken',
       'beef',

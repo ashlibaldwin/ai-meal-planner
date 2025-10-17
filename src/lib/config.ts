@@ -4,7 +4,6 @@ export const config = {
   nodeEnv: process.env.NODE_ENV || 'development'
 }
 
-// Validate required environment variables
 export function validateEnvironment() {
   const errors: string[] = []
 
@@ -21,7 +20,6 @@ export function validateEnvironment() {
   }
 }
 
-// Validate environment in production
 if (config.nodeEnv === 'production') {
   validateEnvironment()
 }

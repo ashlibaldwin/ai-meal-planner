@@ -11,7 +11,7 @@ An end-to-end AI app that turns a chat into a personalized weekly meal plan back
 
 ## 🔧 Production-grade highlights
 
-- **Deterministic LLM tests**: Record/replay fixtures (`src/lib/__tests__/recording-openai.ts`), CI runs in replay mode.
+- **Deterministic LLM tests**: Record/replay fixtures (`src/lib/__tests__/recording-openai.ts`), CI runs basic tests only (fixtures do not replay in CI).
 - **Commit-time quality**: Husky + lint-staged (ESLint/Prettier) and optional fixture recording.
 - **Service/API boundaries**: `api/chat` orchestrates intents; `meal-plan-service` owns domain logic; `openai` centralizes prompting and fallbacks.
 - **Data integrity**: Prisma schema/migrations with recipe name uniqueness; seeding via `prisma/seed.ts`.
@@ -63,6 +63,7 @@ Cloud-ready for Vercel (`svelte.config.js` uses the Vercel adapter). Provision P
 
 - **More recipes, still fast**: add simple search and filters, paginate results, and cache generated plans so common requests return quickly.
 - **Sign‑in and saved plans**: log in, come back to your plan, and add/manage your own recipes.
+- **Recipe management**: create, edit, and delete custom recipes; import recipes from popular cooking websites; share recipes with friends and family.
 - **Grocery handoff**: optionally send the shopping list to a retailer API (e.g., Instacart/Walmart) when ready.
 
 ## License

@@ -19,18 +19,20 @@
   ]
 </script>
 
-<div class="card print-section">
+<div class="card print:break-inside-avoid print:mb-8">
   <div class="flex justify-between items-center mb-6">
     <h3 class="text-xl font-medium text-gray-900">This Week's Meals</h3>
     {#if mealPlan}
-      <button class="btn-secondary text-sm no-print" onclick={onPrintMealPlan}>
+      <button
+        class="btn-secondary text-sm print:hidden"
+        onclick={onPrintMealPlan}
+      >
         Print
       </button>
     {/if}
   </div>
 
   {#if isGenerating && !mealPlan}
-    <!-- Skeleton loading for meal plan -->
     <div class="space-y-4">
       {#each Array(3) as _, i}
         <div class="border rounded-lg p-4 animate-pulse">

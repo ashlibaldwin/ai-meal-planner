@@ -10,7 +10,9 @@
   }
 </script>
 
-<div class="bg-gray-50 rounded-lg print-meal shadow-sm">
+<div
+  class="bg-gray-50 rounded-lg print:break-inside-avoid print:mb-6 print:border print:border-gray-300 print:p-4 shadow-sm"
+>
   <div class="flex justify-between items-start p-3">
     <div class="flex-1">
       <h5 class="font-medium text-gray-900">{meal.recipe.name}</h5>
@@ -57,9 +59,9 @@
       <!-- Ingredients -->
       <div>
         <h6 class="font-medium text-gray-900 mb-2">Ingredients:</h6>
-        <ul class="text-sm text-gray-700 space-y-1 print-ingredients">
+        <ul class="text-sm text-gray-700 space-y-1 print:columns-2 print:gap-4">
           {#each meal.recipe.ingredients as ingredient}
-            <li class="flex items-start print-grocery-item">
+            <li class="flex items-start print:break-inside-avoid print:mb-2">
               <span
                 class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-2 flex-shrink-0"
               ></span>
@@ -70,7 +72,7 @@
       </div>
 
       <!-- Instructions -->
-      <div class="print-instructions">
+      <div class="print:mt-4">
         <h6 class="font-medium text-gray-900 mb-2">Instructions:</h6>
         <ol class="text-sm text-gray-700 space-y-2">
           {#each meal.recipe.instructions as instruction, index}

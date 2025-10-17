@@ -5,14 +5,14 @@
 </script>
 
 {#if mealPlan}
-  <div class="card print-section">
+  <div class="card print:break-inside-avoid print:mb-8">
     <h3 class="text-lg font-semibold text-gray-900 mb-4">🛒 Grocery List</h3>
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 print-grocery"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 print:columns-3 print:gap-4"
     >
       {#each mealPlan.groceryList as item}
         <div
-          class="flex items-center p-2 bg-gray-50 rounded-lg print-grocery-item shadow-sm"
+          class="flex items-center p-2 bg-gray-50 rounded-lg print:break-inside-avoid print:mb-2 shadow-sm"
         >
           <input
             type="checkbox"

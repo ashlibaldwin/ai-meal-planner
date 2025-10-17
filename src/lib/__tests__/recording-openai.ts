@@ -2,7 +2,6 @@
 import crypto from 'crypto'
 import fs from 'fs'
 import path from 'path'
-// Lazy import real OpenAI only in record mode
 
 type ChatArgs = {
   model: string

@@ -41,7 +41,7 @@
   })
 </script>
 
-<div class="card h-[500px] flex flex-col no-print">
+<div class="card h-[500px] flex flex-col print:hidden">
   <!-- Chat Messages -->
   <div
     bind:this={chatContainer}

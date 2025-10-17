@@ -20,20 +20,17 @@ describe('Basic functionality tests', () => {
       cuisine: 'Test'
     }
 
-    // Create recipe
     const created = await prisma.recipe.create({
       data: testRecipe
     })
     expect(created.name).toBe('Test Recipe')
 
-    // Read recipe
     const found = await prisma.recipe.findUnique({
       where: { id: created.id }
     })
     expect(found).toBeTruthy()
     expect(found?.name).toBe('Test Recipe')
 
-    // Cleanup
     await prisma.recipe.delete({
       where: { id: created.id }
     })
@@ -46,20 +43,17 @@ describe('Basic functionality tests', () => {
       groceryList: ['test item']
     }
 
-    // Create meal plan
     const created = await prisma.mealPlan.create({
       data: testMealPlan
     })
     expect(created.preferences).toBe(testMealPlan.preferences)
 
-    // Read meal plan
     const found = await prisma.mealPlan.findUnique({
       where: { id: created.id }
     })
     expect(found).toBeTruthy()
     expect(found?.preferences).toBe(testMealPlan.preferences)
 
-    // Cleanup
     await prisma.mealPlan.delete({
       where: { id: created.id }
     })

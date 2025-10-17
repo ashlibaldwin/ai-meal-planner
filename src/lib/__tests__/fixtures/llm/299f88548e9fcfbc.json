@@ -1,0 +1,33 @@
+{
+  "id": "chatcmpl-CRjJr3Qts4oOPXga8lDmw9nSGZLH8",
+  "object": "chat.completion",
+  "created": 1760725099,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"meals\": [\n    {\n      \"dayOfWeek\": \"Monday\",\n      \"mealType\": \"dinner\",\n      \"recipeName\": \"Grilled Chicken Salad\",\n      \"description\": \"A healthy and delicious salad with grilled chicken and fresh lettuce\"\n    }\n  ],\n  \"reasoning\": \"Changed the Monday dinner to Grilled Chicken Salad as per user's request to avoid lentils\"\n}",
+        "refusal": null,
+        "annotations": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2697,
+    "completion_tokens": 84,
+    "total_tokens": 2781,
+    "prompt_tokens_details": { "cached_tokens": 0, "audio_tokens": 0 },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "service_tier": "default",
+  "system_fingerprint": null
+}

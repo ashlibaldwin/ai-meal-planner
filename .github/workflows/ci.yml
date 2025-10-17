@@ -46,10 +46,12 @@ jobs:
       - name: Generate Prisma client
         run: npm run db:generate
 
-      - name: Run database migrations
+      - name: Reset and setup database
         env:
           DATABASE_URL: 'postgresql://postgres:postgres@localhost:5432/test_db'
-        run: npx prisma db push
+        run: |
+          npx prisma db push --force-reset
+          npx prisma db seed
 
       - name: Sync SvelteKit
         run: npx svelte-kit sync
@@ -63,7 +65,7 @@ jobs:
       - name: Build project
         env:
           OPENAI_API_KEY: 'dummy-key-for-ci-build'
-        run: npm run build
+        run: npx vite build
 
       - name: Run basic tests (skip fixture-dependent tests)
         env:

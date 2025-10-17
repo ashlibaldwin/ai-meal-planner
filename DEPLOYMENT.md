@@ -45,20 +45,6 @@ In Vercel dashboard → Project Settings → Environment Variables:
 | `DATABASE_URL`   | `postgresql://...`    | Neon database URL   |
 | `NODE_ENV`       | `production`          | Environment setting |
 
-### 4. Deploy Database Schema
-
-After Vercel deployment, you need to run Prisma migrations:
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Run database migrations
-vercel env pull .env.local
-npx prisma db push
-npx prisma db seed
-```
-
 ### Debug Commands
 
 ```bash
